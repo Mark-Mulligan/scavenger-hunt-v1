@@ -4,6 +4,15 @@
   margin: 0;
 }
 
+/* @font-face {
+  font-family: 'MyFont';
+  src: url('/fonts/TypefaceMario64-yw.otf') format('opentype');
+}
+
+body {
+  font-family: 'MyFont', sans-serif;
+} */
+
 a {
   color: inherit;
   text-decoration: none;

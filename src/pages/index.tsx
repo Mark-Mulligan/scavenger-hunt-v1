@@ -4,10 +4,14 @@ import React, { useState } from 'react';
 // Next
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
 
 // axis
 import axios from 'axios';
+
+// images
+import marioBackground from '../../public/images/marioBackground.jpeg';
 
 const Home: NextPage = () => {
   const [userAnswer, setUserAnswer] = useState('');
@@ -32,15 +36,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>Scavenger Hunt</h1>
-        <form onSubmit={handleSubmit}>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati maxime vitae amet eos ut voluptas itaque
-            quis provident odio fugit?
-          </p>
-          <input value={userAnswer} onChange={(e) => setUserAnswer(e.target.value)} />
-          <button type="submit">Submit</button>
-        </form>
+        <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
+          <Image src={marioBackground} alt="Mario" layout="fill" objectFit="contain" />
+          <div className={styles.titleContainer}>
+            <h1 className={styles.title}>Scavenger Hunt</h1>
+          </div>
+        </div>
       </main>
     </>
   );
