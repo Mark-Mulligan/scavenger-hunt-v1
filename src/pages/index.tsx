@@ -4,17 +4,17 @@ import React, { useState } from 'react';
 // Next
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-import styles from '@/styles/Home.module.scss';
+import { useRouter } from 'next/router';
 
 // axis
 import axios from 'axios';
 
-// images
-import marioTitle from '../../public/images/Mario_Series_Logo.svg';
-import mario from '../../public/images/mario.png';
+// Components
+import Intro from '@/components/Intro';
+import Instructions from '@/components/Instructions';
 
 const Home: NextPage = () => {
+  const router = useRouter();
   const [userAnswer, setUserAnswer] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -36,12 +36,8 @@ const Home: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <Image src={marioTitle} alt="Super Mario" height={100} width={200} />
-        <h1 className={styles.title}>SCAVENGER HUNT</h1>
-        <button className="btn">Let&apos;s Go!</button>
-        <Image src={mario} alt="Mario" />
-      </main>
+      {router.query.page === undefined && <Intro />}
+      {router.query.page === 'instructions' && <Instructions />}
     </>
   );
 };
