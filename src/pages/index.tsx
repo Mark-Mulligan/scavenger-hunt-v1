@@ -5,13 +5,14 @@ import React, { useState } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '@/styles/Home.module.css';
+import styles from '@/styles/Home.module.scss';
 
 // axis
 import axios from 'axios';
 
 // images
-import marioBackground from '../../public/images/marioBackground.jpeg';
+import marioTitle from '../../public/images/Mario_Series_Logo.svg';
+import mario from '../../public/images/mario.png';
 
 const Home: NextPage = () => {
   const [userAnswer, setUserAnswer] = useState('');
@@ -36,12 +37,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
-          <Image src={marioBackground} alt="Mario" layout="fill" objectFit="contain" />
-          <div className={styles.titleContainer}>
-            <h1 className={styles.title}>Scavenger Hunt</h1>
-          </div>
-        </div>
+        <Image src={marioTitle} alt="Super Mario" height={100} width={200} />
+        <h1 className={styles.title}>SCAVENGER HUNT</h1>
+        <button className="btn">Let&apos;s Go!</button>
+        <Image src={mario} alt="Mario" />
       </main>
     </>
   );
