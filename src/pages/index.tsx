@@ -12,6 +12,7 @@ import axios from 'axios';
 // Components
 import Intro from '@/components/Intro';
 import Instructions from '@/components/Instructions';
+import Lakitu from '@/components/Lakitu';
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -38,6 +39,7 @@ const Home: NextPage = () => {
       </Head>
       {router.query.page === undefined && <Intro />}
       {router.query.page === 'instructions' && <Instructions />}
+      {router.query.page === 'lakitu' && <Lakitu />}
     </>
   );
 };
