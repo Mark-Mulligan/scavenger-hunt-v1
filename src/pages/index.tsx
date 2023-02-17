@@ -13,6 +13,7 @@ import axios from 'axios';
 import Intro from '@/components/Intro';
 import Instructions from '@/components/Instructions';
 import Lakitu from '@/components/Lakitu';
+import Question from '@/components/Question';
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -40,6 +41,19 @@ const Home: NextPage = () => {
       {router.query.page === undefined && <Intro />}
       {router.query.page === 'instructions' && <Instructions />}
       {router.query.page === 'lakitu' && <Lakitu />}
+      {router.query.page === 'question1' && (
+        <Question
+          title="Question #1"
+          riddle={
+            <p>
+              Mario is without Yoshi to help him rescue Princess Peach. He needs your help! Look for the{' '}
+              <span className="bold">golden Grandscape steed</span> until Yoshi can hop in.
+            </p>
+          }
+          answer="test"
+          next="question2"
+        />
+      )}
     </>
   );
 };
