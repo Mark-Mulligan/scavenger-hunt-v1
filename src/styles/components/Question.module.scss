@@ -4,6 +4,7 @@
   justify-content: space-between;
   margin-bottom: 50px;
   padding: 10px;
+  background: rgba(255, 255, 255, 0.8);
 
   .menuItem {
     cursor: pointer;
@@ -27,18 +28,14 @@
     font-size: 16px;
     line-height: 1.5rem;
     color: rgba(60, 60, 60);
-  }
-}
-
-.answerContainer {
-  margin: auto;
-  max-width: 500px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
-  padding: 2rem;
-  text-align: center;
-
-  .inputContainer {
     margin-bottom: 1rem;
+  }
+
+  .answerContainer {
+    text-align: center;
+
+    .inputContainer {
+      margin-bottom: 1rem;
+    }
   }
 }
