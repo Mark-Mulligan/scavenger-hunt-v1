@@ -59,8 +59,6 @@ const Question: FC<IProps> = ({ title, riddle, answer, next }) => {
         <Image className={styles.menuItem} height={60} width={60} src={questionBlock} alt="hint" />
       </div>
 
-      <div className={`tube ${showTube ? 'expanded' : 'hidden'}`} />
-
       <div className={styles.questionContainer}>
         <h2>{title}</h2>
         {riddle}
@@ -79,6 +77,13 @@ const Question: FC<IProps> = ({ title, riddle, answer, next }) => {
             </button>
           </div>
         </form>
+      </div>
+
+      <div className={`tube ${showTube ? 'expanded' : 'hidden'}`}>
+        <div className="coinQuestion">
+          <h2 className="title">Title Will Go Here</h2>
+          <p className="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, omnis.</p>
+        </div>
       </div>
     </div>
   );
